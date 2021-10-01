@@ -127,7 +127,7 @@ as of v0.4.5
 | RETURN | :white_check_mark: |
 | WITH | :white_check_mark: |
 | UNWIND | :x: |
-| WHERE | :x: |
+| WHERE | :white_check_mark: |
 | ORDER BY | :white_check_mark: |
 | SKIP | :white_check_mark: |
 | LIMIT | :white_check_mark: |
