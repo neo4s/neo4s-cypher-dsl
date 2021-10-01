@@ -1,7 +1,7 @@
-package neo4s.cypherDSL.spec.clauses
+package neo4s.cypher.dsl.spec.clauses
 
-import neo4s.cypherDSL.spec.entities.{Node, NodeType, RelationType}
-import neo4s.cypherDSL.spec.{Context, DSLResult, Path, PathLink, QueryProvider}
+import neo4s.cypher.dsl.spec.entities.{Node, NodeType, RelationType}
+import neo4s.cypher.dsl.spec.{Context, DSLResult, Path, PathLink, QueryProvider}
 import shapeless.{HList, HNil}
 import shapeless.ops.hlist.ToTraversable
 

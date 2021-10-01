@@ -1,9 +1,9 @@
-package neo4s.cypherDSL.spec.operators
+package neo4s.cypher.dsl.spec.operators
 
-import neo4s.cypherDSL.spec.{Context, DSLResult}
-import neo4s.cypherDSL.spec.entities.{AliasedProduct, Node, Relationship}
-import neo4s.cypherDSL.spec.utils.ElementPropertyExtractingAndAliasing
-import neo4s.cypherDSL.spec.Utils._
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.entities.{AliasedProduct, Node, Relationship}
+import neo4s.cypher.dsl.spec.utils.ElementPropertyExtractingAndAliasing
+import neo4s.cypher.dsl.spec.Utils._
 
 case class Distinct(elements: Product*) extends Operator with ElementPropertyExtractingAndAliasing {
 

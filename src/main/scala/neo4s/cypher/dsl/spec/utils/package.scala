@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
 package object utils {
   implicit class RichString(input: String) {

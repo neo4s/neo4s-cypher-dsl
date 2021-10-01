@@ -1,6 +1,6 @@
-package neo4s.cypherDSL.spec.utils
+package neo4s.cypher.dsl.spec.utils
 
-import neo4s.cypherDSL.spec.QueryProvider
+import neo4s.cypher.dsl.spec.QueryProvider
 
 object TestClasses {
   case class Person(id: String, name: String, age: Int)

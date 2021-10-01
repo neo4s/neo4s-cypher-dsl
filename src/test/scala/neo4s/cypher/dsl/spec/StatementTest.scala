@@ -1,8 +1,8 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
-import neo4s.cypherDSL.spec.clauses.{Matches, Returns}
-import neo4s.cypherDSL.spec.utils.Random._
-import neo4s.cypherDSL.spec.utils.TestClasses.Person
+import neo4s.cypher.dsl.spec.clauses.{Matches, Returns}
+import neo4s.cypher.dsl.spec.utils.Random._
+import neo4s.cypher.dsl.spec.utils.TestClasses.Person
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec
 

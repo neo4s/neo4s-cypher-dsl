@@ -1,6 +1,6 @@
-package neo4s.cypherDSL.spec.clauses
+package neo4s.cypher.dsl.spec.clauses
 
-import neo4s.cypherDSL.spec.DSLResult
+import neo4s.cypher.dsl.spec.DSLResult
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec
 

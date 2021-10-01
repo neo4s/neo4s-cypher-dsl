@@ -1,13 +1,13 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
-import neo4s.cypherDSL.spec.entities._
-import neo4s.cypherDSL.spec.utils.SnakeCasing
+import neo4s.cypher.dsl.spec.entities._
+import neo4s.cypher.dsl.spec.utils.SnakeCasing
 import shapeless.ops.hlist.ToTraversable
 import shapeless.{HList, HNil}
 
 import scala.util.Try
 
-private[cypherDSL] class Path(val pathLinks: PathLink*) {
+private[dsl] class Path(val pathLinks: PathLink*) {
   def toQuery(context: Context = new Context()): DSLResult = {
     val (queryList, paramMap) =
       pathLinks.map(_.toQuery(context)).foldLeft((List.empty[String], Map.empty[String, Any])) { (acc, result) =>

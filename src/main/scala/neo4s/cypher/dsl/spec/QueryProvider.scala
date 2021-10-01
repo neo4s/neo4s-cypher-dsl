@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
 import shapeless.ops.record.Keys
 import shapeless.{HList, LabelledGeneric}
@@ -29,12 +29,12 @@ trait QueryProvider[T <: Product] {
 
 }
 
-/** Factory for [[neo4s.cypherDSL.spec.QueryProvider]] instances */
+/** Factory for [[neo4s.cypher.dsl.spec.QueryProvider]] instances */
 object QueryProvider {
   def apply[T <: Product](implicit queryProvider: QueryProvider[T]): QueryProvider[T] =
     queryProvider
 
-  /** Default [[neo4s.cypherDSL.spec.QueryProvider]] implementation
+  /** Default [[neo4s.cypher.dsl.spec.QueryProvider]] implementation
   * this is served implicitly whenever an implicit instance of [[QueryProvider]] is required but unavailable
     * @param lGen implicit [[LabelledGeneric]] to extract [[HList]] from case class.
     * @param keys implicit [[Keys]] extracted at compile time from @lGen

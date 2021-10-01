@@ -1,9 +1,9 @@
-package neo4s.cypherDSL.spec.utils
+package neo4s.cypher.dsl.spec.utils
 
-import neo4s.cypherDSL.spec.entities.{CypherType, Node, NodeType, RelationType}
-import neo4s.cypherDSL.spec.Utils._
+import neo4s.cypher.dsl.spec.entities.{CypherType, Node, NodeType, RelationType}
+import neo4s.cypher.dsl.spec.Utils._
 
-private[cypherDSL] trait ElementPropertyExtracting {
+private[dsl] trait ElementPropertyExtracting {
   def getElementAndProperties(element: Product): (Any, List[String]) =
     element match {
       case s: Node[_, _]   => (s.element, s.properties.toList[Symbol].map(_.name))
@@ -13,7 +13,7 @@ private[cypherDSL] trait ElementPropertyExtracting {
     }
 }
 
-private[cypherDSL] trait ElementPropertyAliasing {
+private[dsl] trait ElementPropertyAliasing {
   private val tooManyPropertiesToAliasMessage = "Alias one property at a time!"
 
   @throws[AssertionError]
@@ -27,5 +27,5 @@ private[cypherDSL] trait ElementPropertyAliasing {
   }
 }
 
-private[cypherDSL] trait ElementPropertyExtractingAndAliasing
+private[dsl] trait ElementPropertyExtractingAndAliasing
   extends ElementPropertyExtracting with ElementPropertyAliasing {}

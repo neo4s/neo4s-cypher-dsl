@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
 import scala.collection.mutable
 

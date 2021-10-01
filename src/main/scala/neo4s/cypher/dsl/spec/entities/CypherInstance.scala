@@ -1,7 +1,7 @@
-package neo4s.cypherDSL.spec.entities
+package neo4s.cypher.dsl.spec.entities
 
-import neo4s.cypherDSL.spec.utils.SnakeCasing
-import neo4s.cypherDSL.spec.{Context, DSLResult, QueryProvider}
+import neo4s.cypher.dsl.spec.utils.SnakeCasing
+import neo4s.cypher.dsl.spec.{Context, DSLResult, QueryProvider}
 import shapeless.ops.hlist.ToTraversable
 import shapeless.{HList, HNil}
 
@@ -51,7 +51,7 @@ private[spec] sealed abstract class CypherInstance[T <: Product: QueryProvider, 
 
 }
 
-private[cypherDSL] case class Node[T <: Product: QueryProvider, H <: HList](element: T, properties: H)(
+private[dsl] case class Node[T <: Product: QueryProvider, H <: HList](element: T, properties: H)(
     implicit i0: ToTraversable.Aux[H, List, Symbol])
     extends CypherInstance(element, properties) {
   override def toQuery(context: Context = new Context()): DSLResult = {
@@ -60,7 +60,7 @@ private[cypherDSL] case class Node[T <: Product: QueryProvider, H <: HList](elem
   }
 }
 
-private[cypherDSL] case class Relationship[T <: Product: QueryProvider, H <: HList](
+private[dsl] case class Relationship[T <: Product: QueryProvider, H <: HList](
     element: T,
     properties: H,
     variableLengthRelation: Option[VariableLengthRelation] = None,
@@ -101,7 +101,7 @@ private[cypherDSL] case class Relationship[T <: Product: QueryProvider, H <: HLi
   override def label: String = upperSnakeCased(super.label)
 }
 
-private[cypherDSL] case class VariableLengthRelationship(variableLengthRelation: VariableLengthRelation)
+private[dsl] case class VariableLengthRelationship(variableLengthRelation: VariableLengthRelation)
     extends CypherEntity {
   override def toQuery(context: Context): DSLResult = {
     DSLResult(s"[${variableLengthRelation.toQuery(context)}]")

@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec.entities
+package neo4s.cypher.dsl.spec.entities
 
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec

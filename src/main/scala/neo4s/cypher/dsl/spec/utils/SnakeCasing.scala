@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec.utils
+package neo4s.cypher.dsl.spec.utils
 
 private[spec] trait SnakeCasing {
   private def toUpperSnakeCase(label: String): String = {

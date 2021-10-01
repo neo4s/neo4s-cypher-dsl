@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
 case class DSLResult(query: String, queryMap: Map[String, Any]) {
   def ++(result: DSLResult, separator: String = ""): DSLResult =

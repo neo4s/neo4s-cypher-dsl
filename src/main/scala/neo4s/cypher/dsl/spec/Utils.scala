@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 import shapeless.{::, HList, HNil}
 
 /** provides various utility methods to the cypherDSL */

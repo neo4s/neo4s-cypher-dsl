@@ -1,6 +1,6 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
-import neo4s.cypherDSL.spec.entities.{NodeType, RelationType}
+import neo4s.cypher.dsl.spec.entities.{NodeType, RelationType}
 
 import scala.reflect.runtime.universe.{weakTypeOf, WeakTypeTag}
 

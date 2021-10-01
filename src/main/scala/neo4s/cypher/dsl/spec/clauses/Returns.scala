@@ -1,11 +1,11 @@
-package neo4s.cypherDSL.spec.clauses
+package neo4s.cypher.dsl.spec.clauses
 
-import neo4s.cypherDSL.spec.{Context, DSLResult}
-import neo4s.cypherDSL.spec.entities.{AliasedProduct, CypherType}
-import neo4s.cypherDSL.spec.operators.Operator
-import neo4s.cypherDSL.spec.utils.ElementPropertyExtractingAndAliasing
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.entities.{AliasedProduct, CypherType}
+import neo4s.cypher.dsl.spec.operators.Operator
+import neo4s.cypher.dsl.spec.utils.ElementPropertyExtractingAndAliasing
 
-private[cypherDSL] class Returns(elements: Either[AliasedProduct, Operator]*)
+private[dsl] class Returns(elements: Either[AliasedProduct, Operator]*)
     extends Clause
     with ElementPropertyExtractingAndAliasing {
   private val errorMessage = "One or more of the elements to be returned are not in Context!"
@@ -32,7 +32,7 @@ private[cypherDSL] class Returns(elements: Either[AliasedProduct, Operator]*)
     DSLResult(if (ids.nonEmpty) s"RETURN $ids" else "")
   }
 }
-private[cypherDSL] object Returns {
+private[dsl] object Returns {
   private def makeEitherList(products: List[Product]): List[Either[AliasedProduct, Operator]] = products match {
     case Nil                        => List.empty
     case (s: Operator) :: remaining => Right(s) +: makeEitherList(remaining)

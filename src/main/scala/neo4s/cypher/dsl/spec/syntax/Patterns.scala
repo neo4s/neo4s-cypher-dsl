@@ -1,8 +1,8 @@
-package neo4s.cypherDSL.spec.syntax
+package neo4s.cypher.dsl.spec.syntax
 
-import neo4s.cypherDSL.spec.entities._
-import neo4s.cypherDSL.spec.{Path, PathLink, QueryProvider}
-import neo4s.cypherDSL.spec.syntax.anyLength
+import neo4s.cypher.dsl.spec.entities._
+import neo4s.cypher.dsl.spec.{Path, PathLink, QueryProvider}
+import neo4s.cypher.dsl.spec.syntax.anyLength
 import shapeless.ops.hlist.ToTraversable
 import shapeless.ops.record.Selector
 import shapeless.{HList, HNil, LabelledGeneric, Witness}

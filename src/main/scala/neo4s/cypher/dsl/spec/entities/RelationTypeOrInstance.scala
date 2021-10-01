@@ -1,7 +1,7 @@
-package neo4s.cypherDSL.spec.entities
+package neo4s.cypher.dsl.spec.entities
 
-import neo4s.cypherDSL.spec.{Context, DSLResult}
-import neo4s.cypherDSL.spec.utils._
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.utils._
 import shapeless.HList
 
 import scala.reflect.runtime.universe._

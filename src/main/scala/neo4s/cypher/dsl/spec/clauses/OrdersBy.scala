@@ -1,10 +1,10 @@
-package neo4s.cypherDSL.spec.clauses
+package neo4s.cypher.dsl.spec.clauses
 
-import neo4s.cypherDSL.spec.{Context, DSLResult}
-import neo4s.cypherDSL.spec.entities.OrderingProduct
-import neo4s.cypherDSL.spec.utils.ElementPropertyExtractingAndAliasing
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.entities.OrderingProduct
+import neo4s.cypher.dsl.spec.utils.ElementPropertyExtractingAndAliasing
 
-private[cypherDSL] class OrdersBy(descendingOrder: Boolean, elements: OrderingProduct*)
+private[dsl] class OrdersBy(descendingOrder: Boolean, elements: OrderingProduct*)
     extends Clause
     with ElementPropertyExtractingAndAliasing {
   private val errorMessage = "One or more of the elements to be returned are not in Context!"
@@ -30,7 +30,7 @@ private[cypherDSL] class OrdersBy(descendingOrder: Boolean, elements: OrderingPr
   private def getOrderingString = if (descendingOrder) "DESC" else ""
 
 }
-private[cypherDSL] object OrdersBy {
+private[dsl] object OrdersBy {
   val empty = OrdersBy(Seq.empty: _*)
 
   def apply(elements: Product*): OrdersBy = new OrdersBy(false, makeOrderingProduct(elements.toList): _*)

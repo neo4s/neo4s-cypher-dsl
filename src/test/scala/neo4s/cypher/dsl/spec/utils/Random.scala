@@ -1,4 +1,4 @@
-package neo4s.cypherDSL.spec.utils
+package neo4s.cypher.dsl.spec.utils
 
 import shapeless.{::, Generic, HList, HNil, Lazy}
 

@@ -1,12 +1,12 @@
-package neo4s.cypherDSL.spec.clauses
+package neo4s.cypher.dsl.spec.clauses
 
-import neo4s.cypherDSL.spec.syntax.any
-import neo4s.cypherDSL.spec.syntax.patterns._
-import neo4s.cypherDSL.spec.syntax.v1._
-import neo4s.cypherDSL.spec.utils.Random._
-import neo4s.cypherDSL.spec.utils.TestClasses.ImplicitCache._
-import neo4s.cypherDSL.spec.utils.TestClasses.{Department, Person}
-import neo4s.cypherDSL.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.syntax.any
+import neo4s.cypher.dsl.spec.syntax.patterns._
+import neo4s.cypher.dsl.spec.syntax.v1._
+import neo4s.cypher.dsl.spec.utils.Random._
+import neo4s.cypher.dsl.spec.utils.TestClasses.ImplicitCache._
+import neo4s.cypher.dsl.spec.utils.TestClasses.{Department, Person}
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec
 

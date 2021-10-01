@@ -39,8 +39,8 @@ case class Department(id: String, name: String)
 ```
 To start writing query DSL, import the following
 ```scala
-import neo4s.cypherDSL.spec.syntax.v1._
-import neo4s.cypherDSL.spec.syntax.patterns._ //optional, import for expressing paths.
+import neo4s.cypher.dsl.spec.syntax.v1._
+import neo4s.cypher.dsl.spec.syntax.patterns._ //optional, import for expressing paths.
 ```
 
 using DSL for a simple match query generation for an instance of model

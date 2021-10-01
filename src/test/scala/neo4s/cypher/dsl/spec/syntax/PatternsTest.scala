@@ -1,10 +1,10 @@
-package neo4s.cypherDSL.spec.syntax
+package neo4s.cypher.dsl.spec.syntax
 
-import neo4s.cypherDSL.spec.syntax.patterns._
-import neo4s.cypherDSL.spec.utils.Random.randomize
-import neo4s.cypherDSL.spec.utils.TestClasses.ImplicitCache._
-import neo4s.cypherDSL.spec.utils.TestClasses._
-import neo4s.cypherDSL.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.syntax.patterns._
+import neo4s.cypher.dsl.spec.utils.Random.randomize
+import neo4s.cypher.dsl.spec.utils.TestClasses.ImplicitCache._
+import neo4s.cypher.dsl.spec.utils.TestClasses._
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec
 class PatternsTest extends AnyWordSpec with should.Matchers {

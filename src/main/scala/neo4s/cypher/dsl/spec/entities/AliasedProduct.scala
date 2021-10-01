@@ -1,7 +1,7 @@
-package neo4s.cypherDSL.spec.entities
+package neo4s.cypher.dsl.spec.entities
 
-private[cypherDSL] case class AliasedProduct(node: Product, alias: Option[String])
-private[cypherDSL] object AliasedProduct {
+private[dsl] case class AliasedProduct(node: Product, alias: Option[String])
+private[dsl] object AliasedProduct {
   def makeAliasedProduct(list: List[Product]): Seq[AliasedProduct] = list match {
     case Nil                                 => List.empty
     case (s: (Product, String)) :: remaining => AliasedProduct(s._1, Option(s._2)) +: makeAliasedProduct(remaining)

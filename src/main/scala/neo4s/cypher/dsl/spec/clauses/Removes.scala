@@ -1,10 +1,10 @@
-package neo4s.cypherDSL.spec.clauses
+package neo4s.cypher.dsl.spec.clauses
 
-import neo4s.cypherDSL.spec.{Context, DSLResult}
-import neo4s.cypherDSL.spec.entities.AliasedProduct
-import neo4s.cypherDSL.spec.utils.{ElementPropertyExtracting, ElementPropertyExtractingAndAliasing}
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.entities.AliasedProduct
+import neo4s.cypher.dsl.spec.utils.{ElementPropertyExtracting, ElementPropertyExtractingAndAliasing}
 
-private[cypherDSL] class Removes(element: AliasedProduct)
+private[dsl] class Removes(element: AliasedProduct)
   extends Clause
   with ElementPropertyExtractingAndAliasing {
   private val errorMessage = "One or more of the elements to be returned are not in Context!"
@@ -23,7 +23,7 @@ private[cypherDSL] class Removes(element: AliasedProduct)
   }
 }
 
-private[cypherDSL] object Removes {
+private[dsl] object Removes {
   def apply(element: Product): Removes = {
     new Removes(AliasedProduct.makeAliasedProduct(element))
   }

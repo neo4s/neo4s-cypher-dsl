@@ -1,8 +1,8 @@
-package neo4s.cypherDSL.spec.entities
+package neo4s.cypher.dsl.spec.entities
 
-import neo4s.cypherDSL.spec.utils.Random.randomize
-import neo4s.cypherDSL.spec.utils.TestClasses._
-import neo4s.cypherDSL.spec.{Context, DSLResult}
+import neo4s.cypher.dsl.spec.utils.Random.randomize
+import neo4s.cypher.dsl.spec.utils.TestClasses._
+import neo4s.cypher.dsl.spec.{Context, DSLResult}
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec
 import shapeless.HNil

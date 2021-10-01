@@ -1,9 +1,9 @@
-package neo4s.cypherDSL.spec.entities
+package neo4s.cypher.dsl.spec.entities
 
 import java.util.UUID
 
-import neo4s.cypherDSL.spec.{Context, DSLResult, QueryProvider}
-import neo4s.cypherDSL.spec.utils.SnakeCasing
+import neo4s.cypher.dsl.spec.{Context, DSLResult, QueryProvider}
+import neo4s.cypher.dsl.spec.utils.SnakeCasing
 import shapeless.HList
 import shapeless.ops.hlist.ToTraversable
 
@@ -31,7 +31,7 @@ private[spec] sealed abstract class CypherType(tpe: Type, fingerprint: UUID) ext
   def label: String = tpe.typeSymbol.asClass.name.decodedName.toString
 }
 
-private[cypherDSL] case class NodeType(tpe: Type, fingerprint: UUID = UUID.randomUUID())
+private[dsl] case class NodeType(tpe: Type, fingerprint: UUID = UUID.randomUUID())
     extends CypherType(tpe, fingerprint) {
   override def toQuery(context: Context): DSLResult = {
     val result = super.toQuery(context)
@@ -71,7 +71,7 @@ private[spec] case class MultiRelationType(types: List[RelationTypeOrInstance], 
 
 }
 
-private[cypherDSL] case class RelationType(tpe: Type,
+private[dsl] case class RelationType(tpe: Type,
                                            variableLengthRelation: Option[VariableLengthRelation] = None,
                                            fingerprint: UUID = UUID.randomUUID())
     extends CypherType(tpe, fingerprint)

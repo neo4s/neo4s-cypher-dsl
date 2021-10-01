@@ -1,9 +1,9 @@
-package neo4s.cypherDSL.spec.syntax
+package neo4s.cypher.dsl.spec.syntax
 
-import neo4s.cypherDSL.spec.clauses._
-import neo4s.cypherDSL.spec.entities.{CypherEntity, Node, NodeType, RelationType, Relationship}
-import neo4s.cypherDSL.spec.operators.Distinct
-import neo4s.cypherDSL.spec.{Path, QueryProvider, Statement}
+import neo4s.cypher.dsl.spec.clauses._
+import neo4s.cypher.dsl.spec.entities.{CypherEntity, Node, NodeType, RelationType, Relationship}
+import neo4s.cypher.dsl.spec.operators.Distinct
+import neo4s.cypher.dsl.spec.{Path, QueryProvider, Statement}
 import shapeless.HList
 import shapeless.ops.hlist.ToTraversable
 

@@ -1,8 +1,8 @@
-package neo4s.cypherDSL.spec
+package neo4s.cypher.dsl.spec
 
-import neo4s.cypherDSL.spec.entities.CypherEntity
+import neo4s.cypher.dsl.spec.entities.CypherEntity
 
-private[cypherDSL] case class PathLink(leftLink: Option[String], element: CypherEntity, rightLink: Option[String]) {
+private[dsl] case class PathLink(leftLink: Option[String], element: CypherEntity, rightLink: Option[String]) {
   def toQuery(context: Context = new Context()): DSLResult = {
     val entityResult = element.toQuery(context)
     entityResult.copy(
