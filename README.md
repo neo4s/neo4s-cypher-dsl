@@ -1,4 +1,8 @@
+<!---
 # scala-cypher-dsl [![Build Status](https://travis-ci.org/manishkkatoch/scala-cypher-dsl.svg?branch=master)](https://travis-ci.org/manishkkatoch/scala-cypher-dsl) ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/https/oss.sonatype.org/me.manishkatoch/scala-cypher-dsl.svg) ![Maven Central](https://img.shields.io/maven-central/v/me.manishkatoch/scala-cypher-dsl.svg)
+-->
+
+# cypher-dsl
 
 A type-safe, compile time DSL for writing Cypher queries in Scala.
 
@@ -14,6 +18,7 @@ Scala-Cypher-DSL aims to alleviate above by providing following:
 
 Note: _It does not provide drivers for Neo4J but only concerns with query and query parameters creation_
 
+<!--- 
 ## Installation
 
 Binary release artefacts are published to the Sonatype OSS Repository Hosting service and synced to Maven Central.
@@ -26,6 +31,7 @@ Binary release artefacts are published to the Sonatype OSS Repository Hosting se
 ```gradle
 implementation group: 'me.manishkatoch', name: 'scala-cypher-dsl', version: '0.4.5'
 ```
+-->
 
 ## Usage
 
@@ -39,7 +45,7 @@ case class Department(id: String, name: String)
 ```
 To start writing query DSL, import the following
 ```scala
-import neo4s.cypher.dsl.spec.syntax.v1._
+import neo4s.cypher.dsl.spec.syntax._
 import neo4s.cypher.dsl.spec.syntax.patterns._ //optional, import for expressing paths.
 ```
 
@@ -72,11 +78,11 @@ val johnDoeQuery = cypher.MATCH(johnDoe('name))
     .toQuery()
 
 johnDoeQuery.query
-//res0: String = MATCH (a0:Person {name: {a0_name}})
-//              RETURN a0
+//res0: String = MATCH (person:Person {name: {person_name}})
+//              RETURN person
 
 johnDoeQuery.queryMap
-//res1: scala.collection.immutable.Map[String,Any] = Map(a0_name -> John Doe))
+//res1: scala.collection.immutable.Map[String,Any] = Map(person_name -> John Doe))
 ```
 > Note: if the property doesn't exist, compilation will fail.
 
@@ -90,8 +96,8 @@ val result = cypher.MATCH(anyPerson)
     .toQuery()
 
 result.query
-//res0: String = MATCH (a0:Person)
-//               RETURN a0
+//res0: String = MATCH (person:Person)
+//               RETURN person
 
 result.queryMap
 //res1: scala.collection.immutable.Map[String,Any] = Map()
@@ -107,17 +113,19 @@ val result = cypher.MATCH(johnDoe -| isFriendOf |-> anyPerson <-- scienceDept)
     .toQuery()
 
 result.query
-//res0: String = MATCH (a0:Person {id: {a0_id},name: {a0_name},age: {a0_age}})-[a1:IS_FRIEND_OF]->(a2:Person)<--(a3:Department {id: {a3_id},name: {a3_name}})
-//               RETURN a2
+//res0: String = MATCH (person:Person {id: {person_id},name: {person_name},age: {person_age}})-[isFriendOf:IS_FRIEND_OF]->(any_person:Person)<--(department:Department {id: {department_id},name: {department_name}})
+//               RETURN any_person
 
 result.queryMap
-//res1: scala.collection.immutable.Map[String,Any] = Map(a0_id -> AX31SD, a0_name -> John Doe, a3_name -> Science, a0_age -> 50, a3_id -> ZSW12R)
+//res1: scala.collection.immutable.Map[String,Any] = Map(person_id -> AX31SD, person_name -> John Doe, department_name -> Science, person_age -> 50, department_id -> ZSW12R)
 ```
+<!---
 for detailed DSL usage and more examples, see [Wiki](https://github.com/manishkkatoch/scala-cypher-dsl/wiki)
+-->
 
 ## DSL Specifications
 
-as of v0.4.5
+as of v0.5.0
 
 | Cypher Clauses | DSL Support |
 |----------------|-------------|
