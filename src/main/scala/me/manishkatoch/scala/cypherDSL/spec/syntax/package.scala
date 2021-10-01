@@ -8,5 +8,5 @@ package object syntax {
   val patterns: Patterns.type           = Patterns
   def any[T <: Product: WeakTypeTag]    = NodeType(weakTypeOf[T])
   def anyRel[T <: Product: WeakTypeTag] = RelationType(weakTypeOf[T])
-  case object anyOrd
+  case object anyLength
 }
