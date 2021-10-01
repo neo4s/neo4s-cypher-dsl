@@ -1,14 +1,15 @@
 package me.manishkatoch.scala.cypherDSL.spec.syntax.v1
 
 import me.manishkatoch.scala.cypherDSL.spec.operators.Distinct
-import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
 import me.manishkatoch.scala.cypherDSL.spec.syntax.patterns._
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.ImplicitCache._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.{Department, Person, WorksIn}
-import org.scalatest.{Matchers, WordSpec}
+import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class SyntaxV1Test extends WordSpec with Matchers {
+class SyntaxV1Test extends AnyWordSpec with should.Matchers {
   val person: Person   = randomize[Person]
   val anyPerson        = any[Person]
   val worksIn: WorksIn = randomize[WorksIn]

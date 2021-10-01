@@ -1,14 +1,15 @@
 package me.manishkatoch.scala.cypherDSL.spec.entities
 
-import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses._
-import org.scalatest.{Matchers, WordSpec}
+import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 import shapeless.HNil
 
 import scala.reflect.runtime.universe.weakTypeOf
 
-class CypherInstanceTest extends WordSpec with Matchers {
+class CypherInstanceTest extends AnyWordSpec with should.Matchers {
   private val person: Person                     = randomize[Person]
   private val headOfDepartment: HeadOfDepartment = randomize[HeadOfDepartment]
 

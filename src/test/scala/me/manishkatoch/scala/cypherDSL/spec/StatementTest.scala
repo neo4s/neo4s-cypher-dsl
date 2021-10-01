@@ -1,11 +1,12 @@
 package me.manishkatoch.scala.cypherDSL.spec
 
 import me.manishkatoch.scala.cypherDSL.spec.clauses.{Matches, Returns}
-import org.scalatest.{Matchers, WordSpec}
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.Person
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class StatementTest extends WordSpec with Matchers {
+class StatementTest extends AnyWordSpec with should.Matchers {
 
   private val person = randomize[Person]
 

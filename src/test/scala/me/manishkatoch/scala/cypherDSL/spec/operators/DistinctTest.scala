@@ -1,14 +1,15 @@
 package me.manishkatoch.scala.cypherDSL.spec.operators
 
-import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
-import me.manishkatoch.scala.cypherDSL.spec.entities.AliasedProduct
 import me.manishkatoch.scala.cypherDSL.spec.syntax.patterns._
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.ImplicitCache._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.Person
-import org.scalatest.{BeforeAndAfterEach, Matchers, WordSpec}
+import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
+import org.scalatest.BeforeAndAfterEach
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class DistinctTest extends WordSpec with Matchers with BeforeAndAfterEach {
+class DistinctTest extends AnyWordSpec with should.Matchers with BeforeAndAfterEach {
   private var context: Context = _
   private var person: Person   = _
 

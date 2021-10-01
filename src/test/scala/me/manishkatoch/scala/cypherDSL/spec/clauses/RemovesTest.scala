@@ -5,9 +5,10 @@ import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.ImplicitCache._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.Person
 import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class RemovesTest extends WordSpec with Matchers {
+class RemovesTest extends AnyWordSpec with should.Matchers {
 
   "Removes" should {
     val person: Person         = randomize[Person]

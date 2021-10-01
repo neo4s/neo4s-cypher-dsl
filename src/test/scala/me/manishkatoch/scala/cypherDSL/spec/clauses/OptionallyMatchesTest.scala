@@ -6,9 +6,10 @@ import me.manishkatoch.scala.cypherDSL.spec.syntax.patterns._
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.ImplicitCache._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.{Department, Person}
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class OptionallyMatchesTest extends WordSpec with Matchers {
+class OptionallyMatchesTest extends AnyWordSpec with should.Matchers {
   "Matches" should {
     val person: Person         = randomize[Person]
     val department: Department = randomize[Department]

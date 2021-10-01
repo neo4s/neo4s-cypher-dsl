@@ -5,9 +5,10 @@ import me.manishkatoch.scala.cypherDSL.spec.syntax.any
 import me.manishkatoch.scala.cypherDSL.spec.syntax.patterns._
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.{Department, Person}
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class MergesTest extends WordSpec with Matchers {
+class MergesTest extends AnyWordSpec with should.Matchers {
 
   "Merges" should {
     val person: Person         = randomize[Person]

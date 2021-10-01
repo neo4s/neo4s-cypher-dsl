@@ -1,8 +1,9 @@
 package me.manishkatoch.scala.cypherDSL.spec.entities
 
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class VariableLengthRelationTest extends WordSpec with Matchers {
+class VariableLengthRelationTest extends AnyWordSpec with should.Matchers {
   "VariableLengthRelation" should {
     "provide *A..B query string" in {
       val relation = VariableLengthRelation(2, 3)

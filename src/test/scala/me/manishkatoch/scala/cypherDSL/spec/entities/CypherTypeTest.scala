@@ -3,12 +3,13 @@ package me.manishkatoch.scala.cypherDSL.spec.entities
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.{HeadOfDepartment, LocatedIn, Person, WorksIn}
 import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 import shapeless.HNil
 
 import scala.reflect.runtime.universe.weakTypeOf
 
-class CypherTypeTest extends WordSpec with Matchers {
+class CypherTypeTest extends AnyWordSpec with should.Matchers {
   "NodeType" should {
     val personType = weakTypeOf[Person]
     ".toQuery" should {

@@ -2,10 +2,11 @@ package me.manishkatoch.scala.cypherDSL.spec
 
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.Person
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 import shapeless.HNil
 
-class QueryProviderTest extends WordSpec with Matchers {
+class QueryProviderTest extends AnyWordSpec with should.Matchers {
   private implicit val context = new Context()
   private val person           = randomize[Person]
   context.add(person)

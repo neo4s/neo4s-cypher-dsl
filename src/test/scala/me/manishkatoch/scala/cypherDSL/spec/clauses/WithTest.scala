@@ -1,13 +1,15 @@
 package me.manishkatoch.scala.cypherDSL.spec.clauses
 
-import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
 import me.manishkatoch.scala.cypherDSL.spec.syntax.patterns._
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.ImplicitCache._
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.{Department, Person}
-import org.scalatest.{BeforeAndAfterEach, Matchers, WordSpec}
+import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
+import org.scalatest.BeforeAndAfterEach
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class WithTest extends WordSpec with Matchers with BeforeAndAfterEach {
+class WithTest extends AnyWordSpec with should.Matchers with BeforeAndAfterEach {
 
   private val personA                   = randomize[Person]
   private val personB                   = randomize[Person]

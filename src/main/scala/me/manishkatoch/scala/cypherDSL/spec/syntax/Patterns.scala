@@ -2,6 +2,7 @@ package me.manishkatoch.scala.cypherDSL.spec.syntax
 
 import me.manishkatoch.scala.cypherDSL.spec.entities._
 import me.manishkatoch.scala.cypherDSL.spec.{Path, PathLink, QueryProvider}
+import me.manishkatoch.scala.cypherDSL.spec.syntax.anyOrd
 import shapeless.ops.hlist.ToTraversable
 import shapeless.ops.record.Selector
 import shapeless.{HList, HNil, LabelledGeneric, Witness}
@@ -233,7 +234,7 @@ private[spec] object Patterns {
       val variableLengthRelationship = VariableLengthRelationship(VariableLengthRelation(length))
       new Path(PathLink(None, element, Some("-")), PathLink(None, variableLengthRelationship, None))
     }
-    def -|*()(implicit qpT: QueryProvider[T]) = {
+    def -|*(x:anyOrd.type)(implicit qpT: QueryProvider[T]) = {
       val variableLengthRelationship = VariableLengthRelationship(VariableLengthRelation())
       new Path(PathLink(None, element, Some("-")), PathLink(None, variableLengthRelationship, None))
     }
@@ -364,7 +365,7 @@ private[spec] object Patterns {
         Relationship(rel.element, rel.properties, Option(VariableLengthRelation(length)))
       new Path(PathLink(None, element, Some("-")), PathLink(None, variableLengthRelationship, None))
     }
-    def -|*() = {
+    def -|*(x: anyOrd.type) = {
       val variableLengthRelationship = VariableLengthRelationship(VariableLengthRelation())
       new Path(PathLink(None, element, Some("-")), PathLink(None, variableLengthRelationship, None))
     }
@@ -441,7 +442,7 @@ private[spec] object Patterns {
       val variableLengthRelationship = VariableLengthRelationship(VariableLengthRelation(length))
       new Path(PathLink(None, Node(element, HNil), Some("-")), PathLink(None, variableLengthRelationship, None))
     }
-    def -|*()(implicit qpT: QueryProvider[T]) = {
+    def -|*(x:anyOrd.type)(implicit qpT: QueryProvider[T]) = {
       val variableLengthRelationship = VariableLengthRelationship(VariableLengthRelation())
       new Path(PathLink(None, Node(element, HNil), Some("-")), PathLink(None, variableLengthRelationship, None))
     }

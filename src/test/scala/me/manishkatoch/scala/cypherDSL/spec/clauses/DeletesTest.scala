@@ -1,13 +1,12 @@
 package me.manishkatoch.scala.cypherDSL.spec.clauses
 
 import me.manishkatoch.scala.cypherDSL.spec.{Context, DSLResult}
-import me.manishkatoch.scala.cypherDSL.spec.syntax.{any, anyRel}
-import me.manishkatoch.scala.cypherDSL.spec.syntax.patterns._
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random.randomize
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.{Department, Person, WorksIn}
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class DeletesTest extends WordSpec with Matchers {
+class DeletesTest extends AnyWordSpec with should.Matchers {
 
 
   "Deletes" should {

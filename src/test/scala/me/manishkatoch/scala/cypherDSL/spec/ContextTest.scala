@@ -1,10 +1,11 @@
 package me.manishkatoch.scala.cypherDSL.spec
 
-import org.scalatest.{Matchers, WordSpec}
 import me.manishkatoch.scala.cypherDSL.spec.utils.TestClasses.Person
 import me.manishkatoch.scala.cypherDSL.spec.utils.Random._
+import org.scalatest.matchers.should
+import org.scalatest.wordspec.AnyWordSpec
 
-class ContextTest extends WordSpec with Matchers {
+class ContextTest extends AnyWordSpec with should.Matchers {
 
   "Context" should {
     val personList = (1 until 10).map(_ => randomize[Person])
